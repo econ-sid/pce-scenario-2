@@ -89,41 +89,41 @@ def create_yoy_chart(df_yoy, yoy_path):
     fig.add_trace(go.Scatter(
         x=df_plot.index, y=df_plot['core_goods'],
         name='Core Goods', mode='lines',
-        fill='tozeroy', fillcolor='rgba(241, 143, 1, 0.6)',
+        fill='tozeroy', fillcolor='rgba(210, 159, 42, 0.6)',
         line=dict(color=colors['goods'], width=0.5),
         stackgroup='hist'
     ))
     fig.add_trace(go.Scatter(
         x=df_plot.index, y=df_plot['non_housing_services'],
         name='Non-Housing Services', mode='lines',
-        fill='tonexty', fillcolor='rgba(162, 59, 114, 0.6)',
+        fill='tonexty', fillcolor='rgba(0, 56, 101, 0.6)',
         line=dict(color=colors['non_housing'], width=0.5),
         stackgroup='hist'
     ))
     fig.add_trace(go.Scatter(
         x=df_plot.index, y=df_plot['housing'],
         name='Housing', mode='lines',
-        fill='tonexty', fillcolor='rgba(46, 134, 171, 0.6)',
+        fill='tonexty', fillcolor='rgba(0, 182, 178, 0.6)',
         line=dict(color=colors['housing'], width=0.5),
         stackgroup='hist'
     ))
     
-    # Forecast stacked area
+    # Forecast stacked area (lighter - 0.4 opacity)
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['goods_contrib_yoy'],
-        mode='lines', fill='tozeroy', fillcolor='rgba(241, 143, 1, 0.4)',
+        mode='lines', fill='tozeroy', fillcolor='rgba(210, 159, 42, 0.4)',
         line=dict(color=colors['goods'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['non_housing_contrib_yoy'],
-        mode='lines', fill='tonexty', fillcolor='rgba(162, 59, 114, 0.4)',
+        mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
         line=dict(color=colors['non_housing'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['housing_contrib_yoy'],
-        mode='lines', fill='tonexty', fillcolor='rgba(46, 134, 171, 0.4)',
+        mode='lines', fill='tonexty', fillcolor='rgba(0, 182, 178, 0.4)',
         line=dict(color=colors['housing'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
