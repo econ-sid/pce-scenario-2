@@ -78,7 +78,7 @@ def calculate_yoy_path(df_mom, forecast):
     return pd.DataFrame(yoy_path).set_index('date')
 
 def create_yoy_chart(df_yoy, yoy_path):
-    colors = {'housing': '#2E86AB', 'non_housing': '#A23B72', 'goods': '#F18F01', 'total': '#1B1B1E'}
+    colors = {'housing': '#00B6B2', 'non_housing': '#003865', 'goods': '#D29F2A', 'total': '#1B1B1E'}
     
     cutoff = df_yoy.index[-1] - pd.DateOffset(years=2)
     df_plot = df_yoy[df_yoy.index >= cutoff]
