@@ -197,9 +197,8 @@ def create_mom_chart(df_mom, forecast):
     return fig
 
 # --- MAIN APP ---
-st.title("Core PCE Inflation Decomposition")
-st.markdown("""
-We believe the future is unknowable, however we can make ourselves more informed by determining possible paths. 
+st.title("Choose Your Own Inflation Adventure")
+st.markdown(""" 
             
 Since inflation is a key to the path for interest rates, we have built this tool where you can build your own forecast for Core PCE inflation. 
 
