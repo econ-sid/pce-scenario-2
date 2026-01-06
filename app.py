@@ -213,7 +213,7 @@ df_mom, df_yoy = fetch_pce_data()
 # Sidebar
 st.sidebar.header("Monthly Pace Assumptions (% MoM)")
 st.sidebar.caption("""\
-By default the sliders are set for the current pace.
+By default the sliders are set for the current 3-month average.
 The range is constrained by the historic min/max.""")
 
 housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
