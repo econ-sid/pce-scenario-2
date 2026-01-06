@@ -217,10 +217,8 @@ df_mom, df_yoy = fetch_pce_data()
 # Sidebar
 st.sidebar.header("Monthly Pace Assumptions (% MoM)")
 st.sidebar.caption("""\
-Pre-pandemic (2014-19) average:
-Housing Services: 0.27%   
-Non-Housing Services: 0.17%   
-Core Goods: -0.06%""")
+Default is the current 3MA.
+Ranges are the historic ranges since 2014.""")
 
 housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
 non_housing_pace = st.sidebar.slider("💼 Non-Housing Services", 0.11, 0.61, 0.29, 0.01, format="%.2f")
@@ -228,6 +226,7 @@ goods_pace = st.sidebar.slider("📦 Core Goods", -0.16, 0.61, 0.02, 0.01, forma
 
 st.sidebar.markdown("---")
 st.sidebar.markdown(f"**Weights:** Housing {WEIGHTS['housing']*100:.1f}% · Non-Housing {WEIGHTS['non_housing_services']*100:.1f}% · Goods {WEIGHTS['core_goods']*100:.1f}%")
+st.sidebar.markdown(f"Pre-pandemic avg. Housing 0.27, Non-Housing Services 0.17, Goods -0.06")
 st.sidebar.markdown(f"**Data through:** {df_mom.index[-1].strftime('%B %Y')}")
 
 # Generate forecast
