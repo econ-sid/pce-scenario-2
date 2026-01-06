@@ -205,10 +205,6 @@ Since inflation is a key to the path for interest rates, we have built this tool
 **How it works:**  
 If you choose the monthly pace (top left sidebar) for the three components of core PCE inflation the model will determine the forecast for the next twelve months.
 
-**Data sources:**  
-- San Francisco Federal Reserve
-- Bureau of Economic Analysis (BEA)
-
 ---
 """)
 
@@ -246,5 +242,4 @@ col2.metric("12-Month Forecast YoY", f"{final_yoy:.2f}%", f"{final_yoy - current
 st.markdown("---")
 
 # Charts
-st.plotly_chart(create_mom_chart(df_mom, forecast), use_container_width=True)
 st.plotly_chart(create_yoy_chart(df_yoy, yoy_path), use_container_width=True)
