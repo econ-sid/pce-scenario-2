@@ -227,9 +227,9 @@ Housing Services: 0.27%
 Non-Housing Services: 0.17%   
 Core Goods: -0.06%""")
 
-housing_pace = st.sidebar.slider("🏠 Housing", -0.2, 0.8, 0.30, 0.01, format="%.2f")
-non_housing_pace = st.sidebar.slider("💼 Non-Housing Services", -0.2, 0.6, 0.25, 0.01, format="%.2f")
-goods_pace = st.sidebar.slider("📦 Core Goods", -0.4, 0.4, 0.00, 0.01, format="%.2f")
+housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
+non_housing_pace = st.sidebar.slider("💼 Non-Housing Services", 0.11, 0.61, 0.29, 0.01, format="%.2f")
+goods_pace = st.sidebar.slider("📦 Core Goods", -0.16, 0.61, 0.02, 0.01, format="%.2f")
 
 st.sidebar.markdown("---")
 st.sidebar.markdown(f"**Weights:** Housing {WEIGHTS['housing']*100:.1f}% · Non-Housing {WEIGHTS['non_housing_services']*100:.1f}% · Goods {WEIGHTS['core_goods']*100:.1f}%")
