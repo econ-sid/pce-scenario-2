@@ -208,7 +208,9 @@ The tool decomposes Core PCE inflation into three components: Housing Services,
 Non-Housing Services, and Core Goods. 
             
 On the sidebar on the left, set your assumed monthly pace for each pillar, 
-and the model projects the year-over-year path forward.
+and the model projects the year-over-year path forward. 
+            
+By default it is set at the current 3-month moving average. The ranges you are offered are what has happened historically since 2014. The Pre-Covid pace is provided for context.
 
 **Data sources:**  
 - San Francisco Federal Reserve
