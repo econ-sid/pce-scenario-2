@@ -95,7 +95,7 @@ def create_yoy_chart(df_yoy, yoy_path):
     ))
     fig.add_trace(go.Scatter(
         x=df_plot.index, y=df_plot['non_housing_services'],
-        name='Non-Housing Services', mode='lines',
+        name='Services ex. Housing', mode='lines',
         fill='tonexty', fillcolor='rgba(0, 56, 101, 0.6)',
         line=dict(color=colors['non_housing'], width=0.5),
         stackgroup='hist'
@@ -117,7 +117,7 @@ def create_yoy_chart(df_yoy, yoy_path):
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['non_housing_contrib_yoy'],
-        name='Non-Housing Services', mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
+        name='Services ex. Housing', mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
         line=dict(color=colors['non_housing'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
