@@ -145,7 +145,6 @@ def create_yoy_chart(df_yoy, yoy_path):
     fig.add_vrect(x0=yoy_path.index[0], x1=yoy_path.index[-1], fillcolor='rgba(200,200,200,0.15)', layer='below', line_width=0)
     
     fig.update_layout(
-        title=dict(text='<b>Core PCE Inflation Rate: Trailing 2 Years and Forecast for Next 12 Months</b>', y=0.95),
         height=450,
         hovermode='x unified',
         yaxis_title='% Change Year-Over-Year',
@@ -244,8 +243,7 @@ implied_annual = forecast['annualized'].iloc[0]
 col1, col2 = st.columns(2)
 col1.metric("Current Core PCE YoY", f"{current_yoy:.2f}%")
 col2.metric("12-Month Forecast YoY", f"{final_yoy:.2f}%", f"{final_yoy - current_yoy:.2f}pp", delta_color="inverse")
-
 st.markdown("---")
-
+st.markdown("**Core PCE Inflation Rate: Trailing 2 Years and Forecast for Next 12 Months**")
 # Charts
 st.plotly_chart(create_yoy_chart(df_yoy, yoy_path), use_container_width=True)
