@@ -200,21 +200,21 @@ def create_mom_chart(df_mom, forecast):
 st.title("Choose Your Own Inflation Adventure")
 st.markdown(""" 
             
-Since inflation is a key to the path for interest rates, we have built this tool where you can build your own forecast for Core PCE inflation. 
-
+Inflation drives the path for rates. This tool allows you to stress-test and forecast core PCE (the Fed's preferred gauge) 
+            by setting your own assumptions for each component.
 **How it works:**  
-If you choose the monthly pace (top left sidebar) for the three components of core PCE inflation the model will determine the forecast for the next twelve months.
-
+Set monthly run-rates for housing, core services ex. housing, and core goods on the sidebar (top-left in mobile). 
+            The model will determine the trajectory of the core PCE YoY rate on a go forward basis.
 ---
 """)
 
 df_mom, df_yoy = fetch_pce_data()
 
 # Sidebar
-st.sidebar.header("Assumed Monthly Inflation Pace (% Chg. MoM)")
+st.sidebar.header("Assumed Monthly Inflation Run-Rate (% Chg. MoM)")
 st.sidebar.caption("""\
 Defaults to the trailing 3 month average.
-Range is bounded by historical mix/max.""")
+Sliders are bounded by historical mix/max.""")
 
 housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
 non_housing_pace = st.sidebar.slider("💼 Services ex. Housing", 0.11, 0.61, 0.29, 0.01, format="%.2f")
