@@ -111,7 +111,7 @@ def create_yoy_chart(df_yoy, yoy_path):
     # Forecast stacked area (lighter - 0.4 opacity)
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['goods_contrib_yoy'],
-        mode='lines', fill='tozeroy', fillcolor='rgba(210, 159, 42, 0.4)',
+        name, 'Core Goods', mode='lines', fill='tozeroy', fillcolor='rgba(210, 159, 42, 0.4)',
         line=dict(color=colors['goods'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
