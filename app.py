@@ -128,18 +128,18 @@ fig.add_trace(go.Scatter(
     stackgroup='fcst', showlegend=False
 ))
     
-    # Core PCE lines
+# Core PCE lines
     fig.add_trace(go.Scatter(
         x=df_plot.index, y=df_plot['core_pce'],
         name='Core PCE YoY', mode='lines',
         line=dict(color=colors['total'], width=2.5)
     ))
     fig.add_trace(go.Scatter(
-    x=yoy_path.index, y=yoy_path['total_yoy'],
-    name='Core PCE YoY', mode='lines+markers', showlegend=False,
-    line=dict(color=colors['total'], width=2.5, dash='dot'),
-    marker=dict(size=5)
-))
+        x=yoy_path.index, y=yoy_path['total_yoy'],
+        name='Core PCE YoY', mode='lines+markers', showlegend=False,
+        line=dict(color=colors['total'], width=2.5, dash='dot'),
+        marker=dict(size=5)
+    ))
     
     fig.add_hline(y=2.0, line=dict(color='rgba(0,0,0,0.3)', width=1, dash='dash'), annotation_text='2% Target')
     fig.add_vrect(x0=yoy_path.index[0], x1=yoy_path.index[-1], fillcolor='rgba(200,200,200,0.15)', layer='below', line_width=0)
