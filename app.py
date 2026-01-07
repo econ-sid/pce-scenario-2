@@ -211,10 +211,10 @@ If you choose the monthly pace (top left sidebar) for the three components of co
 df_mom, df_yoy = fetch_pce_data()
 
 # Sidebar
-st.sidebar.header("Monthly Pace Assumptions (% MoM)")
+st.sidebar.header("Assumed Monthly Inflation Pace (% Chg. MoM)")
 st.sidebar.caption("""\
-By default the sliders are set for the current 3-month average.
-The range is constrained by the historic min/max.""")
+Defaults to the trailing 3 month average.
+Range is bounded by historical mix/max.""")
 
 housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
 non_housing_pace = st.sidebar.slider("💼 Services ex. Housing", 0.11, 0.61, 0.29, 0.01, format="%.2f")
