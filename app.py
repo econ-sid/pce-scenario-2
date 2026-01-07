@@ -117,13 +117,13 @@ def create_yoy_chart(df_yoy, yoy_path):
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['non_housing_contrib_yoy'],
-        mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
+        name='Non-Housing Services', mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
         line=dict(color=colors['non_housing'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['housing_contrib_yoy'],
-        mode='lines', fill='tonexty', fillcolor='rgba(0, 182, 178, 0.4)',
+        name='Housing',mode='lines', fill='tonexty', fillcolor='rgba(0, 182, 178, 0.4)',
         line=dict(color=colors['housing'], width=1, dash='dot'),
         stackgroup='fcst', showlegend=False
     ))
@@ -136,7 +136,7 @@ def create_yoy_chart(df_yoy, yoy_path):
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['total_yoy'],
-        mode='lines+markers', showlegend=False,
+        name='Core PCE',mode='lines+markers', showlegend=False,
         line=dict(color=colors['total'], width=2.5, dash='dot'),
         marker=dict(size=5)
     ))
