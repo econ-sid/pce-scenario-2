@@ -217,7 +217,7 @@ By default the sliders are set for the current 3-month average.
 The range is constrained by the historic min/max.""")
 
 housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
-non_housing_pace = st.sidebar.slider("💼 Non-Housing Services", 0.11, 0.61, 0.29, 0.01, format="%.2f")
+non_housing_pace = st.sidebar.slider("💼 Services ex. Housing", 0.11, 0.61, 0.29, 0.01, format="%.2f")
 goods_pace = st.sidebar.slider("📦 Core Goods", -0.16, 0.61, 0.02, 0.01, format="%.2f")
 
 st.sidebar.markdown("---")
