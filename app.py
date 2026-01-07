@@ -221,9 +221,9 @@ non_housing_pace = st.sidebar.slider("💼 Non-Housing Services", 0.11, 0.61, 0.
 goods_pace = st.sidebar.slider("📦 Core Goods", -0.16, 0.61, 0.02, 0.01, format="%.2f")
 
 st.sidebar.markdown("---")
-st.sidebar.markdown(f"**Weights:** Housing {WEIGHTS['housing']*100:.1f}% · Non-Housing {WEIGHTS['non_housing_services']*100:.1f}% · Goods {WEIGHTS['core_goods']*100:.1f}%")
-st.sidebar.markdown(f"Pre-pandemic avg. Housing 0.27, Non-Housing Services 0.17, Goods -0.06")
-st.sidebar.markdown(f"**Data through:** {df_mom.index[-1].strftime('%B %Y')}")
+st.sidebar.caption(f"Weights: Housing {WEIGHTS['housing']*100:.1f}% · Non-Housing {WEIGHTS['non_housing_services']*100:.1f}% · Goods {WEIGHTS['core_goods']*100:.1f}%")
+st.sidebar.caption("Pre-pandemic avg: Housing 0.27 · Non-Housing 0.17 · Goods -0.06")
+st.sidebar.caption(f"Data through: {df_mom.index[-1].strftime('%B %Y')}")
 
 # Generate forecast
 forecast = generate_forecast(df_mom, housing_pace, non_housing_pace, goods_pace)
