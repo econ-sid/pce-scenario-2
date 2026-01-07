@@ -145,10 +145,10 @@ def create_yoy_chart(df_yoy, yoy_path):
     fig.add_vrect(x0=yoy_path.index[0], x1=yoy_path.index[-1], fillcolor='rgba(200,200,200,0.15)', layer='below', line_width=0)
     
     fig.update_layout(
-        title=dict(text='<b>Core PCE YoY: History + Forecast</b>', y=0.95),
+        title=dict(text='<b>Core PCE Inflation Rate: Trailing 2 Years and Forecast for Next 12 Months</b>', y=0.95),
         height=450,
         hovermode='x unified',
-        yaxis_title='Contribution (pp)',
+        yaxis_title='% Change Year-Over-Year',
         legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
         margin=dict(l=60, r=40, t=80, b=60)
     )
