@@ -1015,16 +1015,16 @@ def create_housing_chart():
     df_q = pd.read_csv(StringIO(quarterly_data))
     df_q['date'] = pd.to_datetime(df_q['date'])
     df_q = df_q.set_index('date')
-    # Convert to percentage (annualized)
-    df_q['new_tenant_rent'] = df_q['new_tenant_rent'] * 100 * 4
-    df_q['all_tenant_rent'] = df_q['all_tenant_rent'] * 100 * 4
+    # Convert to percentage
+    df_q['new_tenant_rent'] = df_q['new_tenant_rent'] * 100
+    df_q['all_tenant_rent'] = df_q['all_tenant_rent'] * 100
     
     # Load monthly data
     df_m = pd.read_csv(StringIO(monthly_data))
     df_m['date'] = pd.to_datetime(df_m['date'])
     df_m = df_m.set_index('date')
-    # Convert to percentage (annualized)
-    df_m['pce_housing'] = df_m['pce_housing'] * 100 * 12
+    # Convert to percentage
+    df_m['pce_housing'] = df_m['pce_housing'] * 100
     
     # Filter from 2010 onwards
     df_q = df_q[df_q.index >= '2010-01-01']
@@ -1064,7 +1064,7 @@ def create_housing_chart():
         hovermode='x unified',
         legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='left', x=0),
         margin=dict(l=60, r=40, t=80, b=60),
-        yaxis_title='% Change (Annualized)'
+        yaxis_title='% Change'
     )
     
     fig.update_xaxes(dtick='M12', tickformat='%Y')
