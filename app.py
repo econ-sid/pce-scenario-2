@@ -108,27 +108,27 @@ def create_yoy_chart(df_yoy, yoy_path):
         stackgroup='hist'
     ))
     
-    # Forecast stacked area
-fig.add_trace(go.Scatter(
-    x=yoy_path.index, y=yoy_path['goods_contrib_yoy'],
-    name='Core Goods', mode='lines', fill='tozeroy', fillcolor='rgba(210, 159, 42, 0.4)',
-    line=dict(color=colors['goods'], width=1, dash='dot'),
-    stackgroup='fcst', showlegend=False
-))
-fig.add_trace(go.Scatter(
-    x=yoy_path.index, y=yoy_path['non_housing_contrib_yoy'],
-    name='Non-Housing Services', mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
-    line=dict(color=colors['non_housing'], width=1, dash='dot'),
-    stackgroup='fcst', showlegend=False
-))
-fig.add_trace(go.Scatter(
-    x=yoy_path.index, y=yoy_path['housing_contrib_yoy'],
-    name='Housing', mode='lines', fill='tonexty', fillcolor='rgba(0, 182, 178, 0.4)',
-    line=dict(color=colors['housing'], width=1, dash='dot'),
-    stackgroup='fcst', showlegend=False
-))
+    # Forecast stacked area (lighter - 0.4 opacity)
+    fig.add_trace(go.Scatter(
+        x=yoy_path.index, y=yoy_path['goods_contrib_yoy'],
+        mode='lines', fill='tozeroy', fillcolor='rgba(210, 159, 42, 0.4)',
+        line=dict(color=colors['goods'], width=1, dash='dot'),
+        stackgroup='fcst', showlegend=False
+    ))
+    fig.add_trace(go.Scatter(
+        x=yoy_path.index, y=yoy_path['non_housing_contrib_yoy'],
+        mode='lines', fill='tonexty', fillcolor='rgba(0, 56, 101, 0.4)',
+        line=dict(color=colors['non_housing'], width=1, dash='dot'),
+        stackgroup='fcst', showlegend=False
+    ))
+    fig.add_trace(go.Scatter(
+        x=yoy_path.index, y=yoy_path['housing_contrib_yoy'],
+        mode='lines', fill='tonexty', fillcolor='rgba(0, 182, 178, 0.4)',
+        line=dict(color=colors['housing'], width=1, dash='dot'),
+        stackgroup='fcst', showlegend=False
+    ))
     
-# Core PCE lines
+    # Core PCE lines
     fig.add_trace(go.Scatter(
         x=df_plot.index, y=df_plot['core_pce'],
         name='Core PCE YoY', mode='lines',
@@ -136,7 +136,7 @@ fig.add_trace(go.Scatter(
     ))
     fig.add_trace(go.Scatter(
         x=yoy_path.index, y=yoy_path['total_yoy'],
-        name='Core PCE YoY', mode='lines+markers', showlegend=False,
+        mode='lines+markers', showlegend=False,
         line=dict(color=colors['total'], width=2.5, dash='dot'),
         marker=dict(size=5)
     ))
