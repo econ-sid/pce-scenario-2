@@ -198,13 +198,12 @@ def create_mom_chart(df_mom, forecast):
 
 # --- MAIN APP ---
 st.title("Choose Your Own Inflation Adventure")
-st.markdown(""" 
-            
-Inflation drives the path for rates. This tool allows you to stress-test and forecast core PCE (the Fed's preferred gauge) 
-            by setting your own assumptions for each component.
+st.markdown("""
+Inflation drives the path for rates. This tool allows you to stress-test and forecast core PCE (the Fed's preferred gauge) by setting your own assumptions for each component.
+
 **How it works:**  
-Set monthly run-rates for housing, core services ex. housing, and core goods on the sidebar (top-left in mobile). 
-            The model will determine the trajectory of the core PCE YoY rate on a go forward basis.
+Set monthly run-rates for housing, core services ex. housing, and core goods on the sidebar (top-left in mobile). The model will determine the trajectory of the core PCE YoY rate on a go forward basis.
+
 ---
 """)
 
