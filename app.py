@@ -149,7 +149,7 @@ def create_yoy_chart(df_yoy, yoy_path):
         height=450,
         hovermode='x unified',
         yaxis_title='% Change Year-Over-Year',
-        legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
+        legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='left', x=0),
         margin=dict(l=60, r=40, t=80, b=60)
     )
     fig.update_xaxes(dtick='M3', tickformat='%b\n%Y')
