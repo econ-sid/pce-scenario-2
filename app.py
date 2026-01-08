@@ -666,8 +666,8 @@ def create_core_goods_chart():
     )
     
     fig.update_xaxes(dtick='M12', tickformat='%Y')
-    fig.update_yaxes(title_text='% Change Year-Over-Year', ticksuffix='%', tickfont=dict(size=10), title_font=dict(size=12), secondary_y=False)
-    fig.update_yaxes(title_text='Index', tickfont=dict(size=10), title_font=dict(size=12), secondary_y=True)
+    fig.update_yaxes(title_text='% Change Year-Over-Year', ticksuffix='%', tickfont=dict(size=10), title_font=dict(size=12), secondary_y=False, showgrid=False)
+    fig.update_yaxes(title_text='Index', tickfont=dict(size=10), title_font=dict(size=12), secondary_y=True, showgrid=False)
     
     return fig
 
@@ -1059,7 +1059,7 @@ def create_housing_chart():
     )
     
     fig.update_xaxes(dtick='M12', tickformat='%Y')
-    fig.update_yaxes(ticksuffix='%', tickfont=dict(size=10), title_font=dict(size=12))
+    fig.update_yaxes(ticksuffix='%', tickfont=dict(size=10), title_font=dict(size=12), showgrid=False)
     
     return fig
 
