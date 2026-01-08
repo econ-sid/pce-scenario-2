@@ -1041,15 +1041,6 @@ def create_housing_chart():
         )
     )
     
-    # All Tenant Repeat Rent Index (quarterly)
-    fig.add_trace(
-        go.Scatter(
-            x=df_q.index, y=df_q['all_tenant_rent'],
-            name='All Tenant Repeat Rent Index', mode='lines',
-            line=dict(color='#003865', width=2.5)
-        )
-    )
-    
     # PCE Housing (monthly)
     fig.add_trace(
         go.Scatter(
