@@ -1080,7 +1080,7 @@ df_mom, df_yoy = fetch_pce_data()
 st.sidebar.header("Assumed Monthly Inflation Run-Rate (% Chg. MoM)")
 st.sidebar.caption("""\
 Defaults to the trailing 3 month average.
-Sliders are bounded by historical mix/max.""")
+Sliders are bounded by historical min/max.""")
 
 housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
 non_housing_pace = st.sidebar.slider("💼 Services ex. Housing", 0.11, 0.61, 0.29, 0.01, format="%.2f")
