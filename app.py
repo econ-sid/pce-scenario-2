@@ -1118,11 +1118,11 @@ st.plotly_chart(create_yoy_chart(df_yoy, yoy_path), use_container_width=True)
 
 # Appendix
 with st.expander("Appendix: Background Charts"):
+    st.markdown("**Housing Rent Indices vs PCE Housing**")
+    st.plotly_chart(create_housing_chart(), use_container_width=True)
+
     st.markdown("**V/U Ratio vs Non-Housing Services Inflation**")
     st.plotly_chart(create_vu_ratio_chart(), use_container_width=True)
 
     st.markdown("**Core Goods Inflation vs Supply Chain Stress Index**")
     st.plotly_chart(create_core_goods_chart(), use_container_width=True)
-
-    st.markdown("**Housing Rent Indices vs PCE Housing**")
-    st.plotly_chart(create_housing_chart(), use_container_width=True)
