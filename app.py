@@ -1078,13 +1078,30 @@ df_mom, df_yoy = fetch_pce_data()
 
 # Sidebar
 st.sidebar.header("Assumed Monthly Inflation Run-Rate (% Chg. MoM)")
-st.sidebar.caption("""\
-Defaults to the trailing 3 month average.
-Sliders are bounded by historical min/max.""")
 
-housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, 0.26, 0.01, format="%.2f")
-non_housing_pace = st.sidebar.slider("💼 Services ex. Housing", 0.11, 0.61, 0.29, 0.01, format="%.2f")
-goods_pace = st.sidebar.slider("📦 Core Goods", -0.16, 0.61, 0.02, 0.01, format="%.2f")
+# Preset dropdown
+preset = st.sidebar.selectbox(
+    "Base Rate Scenario",
+    ["Trailing 3-Month Avg", "Pre-Pandemic (2014-19)", "Fed Target (~2% YoY)", "Custom"],
+    index=0
+)
+
+# Define presets
+presets = {
+    "Trailing 3-Month Avg": {"housing": 0.26, "non_housing": 0.29, "goods": 0.02},
+    "Pre-Pandemic (2014-19)": {"housing": 0.27, "non_housing": 0.17, "goods": -0.06},
+    "Fed Target (~2% YoY)": {"housing": 0.17, "non_housing": 0.17, "goods": 0.00},
+    "Custom": {"housing": 0.20, "non_housing": 0.20, "goods": 0.00}
+}
+
+defaults = presets[preset]
+
+st.sidebar.caption("Select a scenario above, then adjust sliders to customize.")
+
+# Sliders
+housing_pace = st.sidebar.slider("🏠 Housing", 0.06, 0.75, defaults["housing"], 0.01, format="%.2f")
+non_housing_pace = st.sidebar.slider("💼 Services ex. Housing", 0.11, 0.61, defaults["non_housing"], 0.01, format="%.2f")
+goods_pace = st.sidebar.slider("📦 Core Goods", -0.16, 0.61, defaults["goods"], 0.01, format="%.2f")
 
 st.sidebar.markdown("---")
 st.sidebar.caption(f"""Weights:
@@ -1113,8 +1130,10 @@ col1.metric("Current Core PCE YoY", f"{current_yoy:.2f}%")
 col2.metric("12-Month Forecast YoY", f"{final_yoy:.2f}%", f"{final_yoy - current_yoy:.2f}pp", delta_color="inverse")
 st.markdown("---")
 st.markdown("**Core PCE Inflation Rate: Trailing 2 Years and Forecast for Next 12 Months**")
+
 # Charts
 st.plotly_chart(create_yoy_chart(df_yoy, yoy_path), use_container_width=True)
+
 
 # Appendix
 with st.expander("Appendix: Background Charts"):
