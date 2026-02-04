@@ -1082,7 +1082,7 @@ st.sidebar.header("Assumed Monthly Inflation Run-Rate (% Chg. MoM)")
 # Preset dropdown
 preset = st.sidebar.selectbox(
     "Base Rate Scenario",
-    ["Trailing 3-Month Avg", "Pre-Pandemic (2014-19)", "Fed Target (~2% YoY)", "Custom"],
+    ["Trailing 3-Month Avg", "Pre-Pandemic (2014-19)", "Last Four Recessions", "Custom"],
     index=0
 )
 
@@ -1090,7 +1090,7 @@ preset = st.sidebar.selectbox(
 presets = {
     "Trailing 3-Month Avg": {"housing": 0.26, "non_housing": 0.29, "goods": 0.02},
     "Pre-Pandemic (2014-19)": {"housing": 0.27, "non_housing": 0.17, "goods": -0.06},
-    "Fed Target (~2% YoY)": {"housing": 0.17, "non_housing": 0.17, "goods": 0.00},
+    "Last Four Recessions": {"housing": 0.238, "non_housing": 0.146, "goods": 0.029},
     "Custom": {"housing": 0.20, "non_housing": 0.20, "goods": 0.00}
 }
 
